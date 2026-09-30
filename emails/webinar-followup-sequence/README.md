@@ -60,10 +60,10 @@ email settings.
 - Email 7: the whole top CTA sentence (🔗🔗 and the text) now links to `/blimed`.
 - Hard-coded details ("mandag kl 18.00", "søndag kl 24:00", prices, "reprise kl 20:30") are kept as in the source. Update them for the next launch.
 - Member photos and screenshots are cleared for reuse.
+- Typos fixed: "1450k" to "1450kr", "kun599/mnd" to "kun 599/mnd", "inkluder**t**" to "inkludert" (8b); "inkluderet" to "inkludert" (6, 8a).
+- The 743 kr vs 793 kr pack value and the "250kr" vs "25%" discount are intentional and stay.
 
 ## Copy issues left as-is (not changed, your call)
 
-- Email 8b: "1450k" (should be kr), "kun599/mnd", "inkluder**t**", "en **krop**"; emails 6 and 8a: "inkluder**et**".
-- Training pack value: 743 kr (email 1) vs 793 kr (email 8b). Discount: "250kr" (1) vs "25%" (later).
 - "innen **søndag** [[Offerdeadline]]" (emails 2, 3, 4): reads "søndag søndag …" if the field already contains the weekday.
-- Age range differs: "6-87" (email 7), "18 og 87" (8a), "18-85" (4).
+- Age range: "18-85" (email 4) vs "18 og 87" (8a). Email 7 says "6-87" on purpose (it jokes about the 6-year-olds).
