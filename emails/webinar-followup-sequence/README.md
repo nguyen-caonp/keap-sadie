@@ -26,9 +26,7 @@ email settings.
 
 ## Manual steps
 
-1. **Host the images.** The source embeds screenshots as base64, which Keap and Gmail strip. They are
-   extracted to `images/` (9 files). Upload them to Keap's image library (or any host), then
-   find-and-replace `src="images/` with `src="https://<your-host>/` in the HTML.
+1. **Images are done.** All images now point at the Keap-hosted links (emails 2 and 4 use two or more stacked pieces for the split screenshots). The `images/` folder is kept only as the source files.
 2. **Paste each file** into a Keap HTML / custom-code email. Set subject and pre-header from the
    comment at the top.
 3. **Send yourself a test** and check `[[…]]` values render (they only merge inside Keap; a browser
