@@ -41,7 +41,7 @@ email settings.
 
 - Fonts (Questrial, Playfair Display) fall back to Arial / Georgia in Gmail and Outlook, as in the reminder sequence.
 - Outlook desktop ignores rounded corners and the gradient bars. Buttons still work but are square.
-- Buttons are whole-block links. Where a paragraph had two different URLs (email 7 top CTA) they stay separate text links.
+- Buttons are whole-block links.
 - No dark-mode styling.
 - All files are 11–22 KB, well under Gmail's ~102 KB clipping limit.
 
@@ -53,13 +53,17 @@ email settings.
 - Added the standard disclaimer ("Resultater varierer …") and the reminder-sequence footer.
 - Image order in email 4 follows the source doc; the screenshots do not obviously belong to the testimonial next to them.
 
+## Agreed copy edits (applied on top of the source doc)
+
+- Email 10: "2025" changed to "2026" (no 2024 or 2025 remains).
+- Women helped is always "12.000+": email 4 "snart 10.000" and "over 12.000", and email 7 "over 12.000+", were changed.
+- Email 7: the whole top CTA sentence (🔗🔗 and the text) now links to `/blimed`.
+- Hard-coded details ("mandag kl 18.00", "søndag kl 24:00", prices, "reprise kl 20:30") are kept as in the source. Update them for the next launch.
+- Member photos and screenshots are cleared for reuse.
+
 ## Copy issues left as-is (not changed, your call)
 
-- Email 10 CTA says "…kropp som fungerer i **2025**" (everything else says 2026).
 - Email 8b: "1450k" (should be kr), "kun599/mnd", "inkluder**t**", "en **krop**"; emails 6 and 8a: "inkluder**et**".
 - Training pack value: 743 kr (email 1) vs 793 kr (email 8b). Discount: "250kr" (1) vs "25%" (later).
-- Email 4 says "snart 10.000 kvinnene" while all others say 12.000+.
 - "innen **søndag** [[Offerdeadline]]" (emails 2, 3, 4): reads "søndag søndag …" if the field already contains the weekday.
-- Hard-coded per launch: "mandag kl 18.00" (2, 3, 7), "søndag kl 24:00", prices 6472 / 962 x 8, "reprise kl 20:30" (8b). Update these for the next launch.
-- Email 7: the 🔗🔗 goes to `/blimed`, the link text next to it to the root offer page.
-- Some screenshots show a named member and profile photo (email 4, Ingvild); check you have permission to reuse them.
+- Age range differs: "6-87" (email 7), "18 og 87" (8a), "18-85" (4).
