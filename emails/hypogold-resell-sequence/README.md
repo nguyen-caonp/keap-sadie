@@ -23,10 +23,13 @@ Only two are used, written as in your GHL example: `{{contact.first_name}}` (gre
 `{{email.unsubscribe_link}}` (footer). Logo, Sadie's photo, bio and footer text are copied from the example unchanged.
 The old Keap opt-out link is not used here. A browser preview shows `{{ }}` raw; they merge inside GHL.
 
+## Countdown timer
+
+Emails 4, 6, 7 and 8 contain your GHL fixed countdown timer snippet (email 4 at the spot marked "(COUNTDOWN)" in the source; in 6, 7 and 8 just above the main button). The snippet is unchanged except that I added `max-width:100%; height:auto;` to the image so it can't overflow on phones. It contains the extra merge field `{{contact.id}}` (in the timer's tracking link) and has an empty `uniqueId=`, which is as GHL generated it. A timer can only be edited before it goes out in a sent email, so send yourself a test first and check the end time.
+
 ## Still needed
 
-1. **Countdown timer (email 4).** The source only says "(COUNTDOWN)". The spot is marked with an HTML comment in `email-04-hva-skjer-i-hypogold.html`. Send the countdown image URL / embed code, or tell me to leave it out.
-2. **GHL image URLs for the 3 chat screenshots in email 5** (in `images/`). The HTML still points at `images/...` until you send the hosted links.
+None. Email 5 images and the countdown timer are in. Remaining details from you will go here.
 
 ## Assumptions (please confirm)
 
