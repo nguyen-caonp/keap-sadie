@@ -36,6 +36,7 @@ have no confirmed GHL equivalent: keep as written, flag, ask. Only `first_name` 
 | Main course sales page | `https://kurs.hypopressivtrening.no` (`/blimed` is a variant used once) |
 | Webinar replay | `https://webinar.hypopressivtrening.no/reprise` |
 | Podcast episode page | `https://webinar.hypopressivtrening.no/podcast` |
+| HYPO GOLD LIVE join page on Kajabi (course platform, not email) | `https://hypopressiv-trening-norge.mykajabi.com/products/grunnkurs-hypopressiv-trening-hypogold/categories/2154620135/posts/2174635267` |
 | Instagram DM (Q&A) | `https://ig.me/m/hypopressivtreningnorge` |
 
 ## Standing decisions (user-approved)
@@ -56,6 +57,10 @@ have no confirmed GHL equivalent: keep as written, flag, ask. Only `first_name` 
 - Drafts may mark italics with `\_word\_` (escaped underscores): treat as italic.
 
 ## Audience notes
+
+- HYPO GOLD *member* reminders (Friday "på mandag kl. 19" and Monday "i dag kl. 19" emails): current members. Same boilerplate at the end of each
+  (Kajabi join link, "Husk at HYPO GOLD er et variert tilbud…", new Monday recordings, a Zoom NB note ending "Hjertelig hilsen, Sadie & teamet ❤️").
+  Build the Zoom NB as a `box()` and the sign-off as `signature()`; save under `emails/hypogold-member-reminders/`.
 
 - Webinar sequences (reminders before, follow-ups after): audience signed up for the webinar.
 - HYPO GOLD "come back" sequence: people who bought the main course but have no active HYPO GOLD membership.

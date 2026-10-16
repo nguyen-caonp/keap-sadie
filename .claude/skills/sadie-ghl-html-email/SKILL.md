@@ -1,6 +1,6 @@
 ---
 name: sadie-ghl-html-email
-description: Turn text emails for Sadie Lawler / Hypopressiv Trening Norge into finished, paste-ready GoHighLevel (GHL) HTML emails in her brand template. Use this whenever the user pastes, uploads or @-mentions an email draft or a whole email sequence for Sadie (Norwegian copy, "Emne:", "Subject line:", "Pre-header", "Preview", "Hei [FIRSTNAME]", "E-post 1", webinar reminders, follow-ups, HYPO GOLD or course sales emails), even if they never say "HTML". Also use it to edit, extend or fix Sadie's existing HTML emails (images, links, countdown timer, greetings, typos). Sadie sends only through GoHighLevel now, never Keap, so output GHL merge fields like {{contact.first_name}}, never Keap [[...]] syntax.
+description: Turn text emails for Sadie Lawler / Hypopressiv Trening Norge into finished, paste-ready GoHighLevel (GHL) HTML emails in her brand template. Use this whenever the user pastes, uploads or @-mentions an email draft or a whole email sequence for Sadie (Norwegian copy, "Emne:", "Subject line:", "Sub til e-post", "Pre-header", "Preview", "Hei [FIRSTNAME]", "E-post 1", webinar reminders, follow-ups, HYPO GOLD or course sales emails), even if they never say "HTML". Also use it to edit, extend or fix Sadie's existing HTML emails (images, links, countdown timer, greetings, typos). Sadie sends only through GoHighLevel now, never Keap, so output GHL merge fields like {{contact.first_name}}, never Keap [[...]] syntax.
 ---
 
 # Sadie GHL HTML email
@@ -45,15 +45,22 @@ those fields into new work. If the user ever says an email goes through Keap, co
   do **not** guess a real-looking URL (a wrong page would be sent to real subscribers, and "I flagged it" is easy
   to miss). Put `TODO_URL` (`https://TODO-ADD-LINK`) as the href: `cta(label)` does this by default and the
   checker warns about it. Known links are in `references/brand-and-rules.md`.
-- **Every email greets by first name.** If the draft has no greeting, add one in Sadie's own style
-  (`Hei {{contact.first_name}},`, `Hei fineste …!`, `Hei …`, `God morgen …!`, `Hei kjære …,`, `Hei igjen …,`),
-  vary them across a sequence, and tell the user you added them.
+- **Every email greets by first name.** If the draft has no greeting, add `Hei {{contact.first_name}},` as the very
+  first line, even when the draft has none (the user asked for this for all emails, Oct 2026), and tell them you added
+  it. Keep a greeting the draft already has. Only vary greetings ("Hei fineste …!", "God morgen …!", "Hei kjære …,")
+  if the user asks for variety. When you add one, add it to the copy of the draft you give `check_email.py --source`,
+  so the merge-field comparison stays like for like.
 - **Images:** never base64. Drafts exported from Google Docs embed images; extract them, show/describe them to
   yourself, save them next to the emails in `images/` and reference `images/<name>` as a placeholder until the user
   uploads to GHL media and sends back `https://assets.cdn.filesafe.space/...` URLs. Then swap the URLs in place.
   Show images at natural size (never stretch). If the user splits one screenshot into pieces, stack them with no gap.
   Check images for baked-in merge fields or placeholder text (e.g. "[[first_name]]" typed into the picture): crop
   it out and make it live text.
+- **Long raw URLs shown as link text** (Kajabi links, `https\://…` exports) overflow phones: pass
+  `style='text-align:left;overflow-wrap:anywhere;word-break:break-word;'` to `p()`. Google Docs exports also write
+  `https\://` in link text; the helper handles that.
+- **A link that exists in the doc but was lost in the export** (e.g. "les denne artikkelen" with no URL) gets the
+  `TODO_URL` placeholder as an inline link and goes on the needed-from-user list.
 - **Hard-coded details stay** (dates, weekdays, prices, "mandag kl 18.00", "kun gyldig i 4 dager"). Prices that
   differ between emails may be intentional. Flag only genuine contradictions and ask.
 - **Number of women helped is 12.000+** in body copy: write "12.000+ kvinner", or just "mer enn 12.000" / "over 12.000"
@@ -74,7 +81,7 @@ write('emails/my-sequence/email-01-slug.html',
 
 Write the build script in the scratchpad/temp directory, not the repo. When drafts are long, parse the text into
 paragraph blocks programmatically instead of retyping, so copy and merge fields can't drift. Subject and
-pre-header go into the HTML comment in `<head>` (GHL's subject/preview fields are set in the GHL UI, tell the user).
+pre-header go into the HTML comment in `<head>` (drafts may call the subject "Sub til e-post"; some have no pre-header, then say so, don't invent one) (GHL's subject/preview fields are set in the GHL UI, tell the user).
 
 ## Footer and the template
 

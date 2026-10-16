@@ -37,7 +37,7 @@ PLACEHOLDERS = {
 EMOJI_LEAD = re.compile(r'^((?:[\U0001F300-\U0001FAFF☀-➿⭐⏰❤️‍])+)\s*')
 
 # ------------------------------------------------------------------ inline markdown
-_ESC = re.compile(r'\\([\\`*_{}\[\]()#+\-.!$%>|~<&"\'])')
+_ESC = re.compile(r'\\([\\`*_{}\[\]()#+\-.!$%>|~<&:="\'])')   # ':' covers Google Docs' https\\:// exports
 
 
 def _protect(s):
