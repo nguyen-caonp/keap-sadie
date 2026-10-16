@@ -177,7 +177,8 @@ def banner(md):
 
 
 def heading(md):
-    return '<h2>%s</h2>\n' % inline(re.sub(r'^\*\*|\*\*$', '', clean(md)))
+    # headings are already bold/styled: drop every ** marker, including ones followed by punctuation ("**Title**:")
+    return '<h2>%s</h2>\n' % inline(clean(md).replace('**', ''))
 
 
 def image(src, alt, first=False, width=None):
