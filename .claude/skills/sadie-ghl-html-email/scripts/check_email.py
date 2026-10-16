@@ -77,10 +77,10 @@ def check(path, source=None):
     if source:
         src = convert_placeholders(open(source, encoding='utf-8').read())
         want = tokens(src)
-        have = tokens(body_nc)
+        have = tokens(re.sub(r'<style.*?</style>', '', head, flags=re.S) + body)  # subject/pre-header comment + body (not footer)
         have.pop('{{contact.id}}', None)  # lives in the countdown snippet's tracking link
         if want != have:
-            res.append(('FAIL', 'merge fields differ from draft. draft=%s html=%s' % (dict(want), dict(have))))
+            res.append(('FAIL', 'merge fields differ from draft (subject comment + body). draft=%s html=%s' % (dict(want), dict(have))))
         src_urls = set(re.findall(r'\]\((https?://[^)\s]+)\)', src)) | set(re.findall(r'(?<![\]\(])https?://[^\s)<>]+', src))
         missing = sorted(u for u in src_urls if u not in set(links))
         if missing:
