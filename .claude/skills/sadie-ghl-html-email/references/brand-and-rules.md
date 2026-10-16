@@ -40,7 +40,7 @@ have no confirmed GHL equivalent: keep as written, flag, ask. Only `first_name` 
 
 ## Standing decisions (user-approved)
 
-- Women helped: always **12.000+** in body copy (drafts sometimes say 10.000 / 11.000 / "over 12.000").
+- Women helped: always **12.000+** in body copy (drafts sometimes say 10.000 / 11.000 / "over 12.000"). After "mer enn" / "over" write plain 12.000.
 - Years: drafts sometimes carry an old year (2024/2025). The user approved updating to **2026** once; for later
   campaigns propose the current campaign year and say you changed it.
 - Prices, dates, weekdays, times and "kun gyldig i N dager" are hard-coded in the copy on purpose. Don't touch.

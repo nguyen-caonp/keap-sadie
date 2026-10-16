@@ -39,9 +39,12 @@ those fields into new work. If the user ever says an email goes through Keap, co
   (the only mapping you may make yourself). Any other field must be used exactly as the user supplied it. If a
   draft contains a Keap field like `[[contact.custom_fields.Offerdeadline]]`, keep it as written, flag it as
   Keap syntax and ask for the GHL field. A wrong guessed field sends "{{contact.something}}" to real subscribers.
-- **Links: keep every URL.** If button/link text has no URL in the draft, don't leave it dead: use the
-  campaign's main CTA link if the draft's other emails make that obvious (flag that you did), otherwise ask.
-  Known links are in `references/brand-and-rules.md`.
+- **Links: keep every URL.** If button or link text has no URL in the draft, ask for it. Only reuse a link
+  from the user's *own other emails in the same job* when it is unmistakably the same offer (for example every
+  email in a HYPO GOLD sequence points to the same registration page), and say you did. When you can't tell,
+  do **not** guess a real-looking URL (a wrong page would be sent to real subscribers, and "I flagged it" is easy
+  to miss). Put `TODO_URL` (`https://TODO-ADD-LINK`) as the href: `cta(label)` does this by default and the
+  checker warns about it. Known links are in `references/brand-and-rules.md`.
 - **Every email greets by first name.** If the draft has no greeting, add one in Sadie's own style
   (`Hei {{contact.first_name}},`, `Hei fineste …!`, `Hei …`, `God morgen …!`, `Hei kjære …,`, `Hei igjen …,`),
   vary them across a sequence, and tell the user you added them.
@@ -53,7 +56,8 @@ those fields into new work. If the user ever says an email goes through Keap, co
   it out and make it live text.
 - **Hard-coded details stay** (dates, weekdays, prices, "mandag kl 18.00", "kun gyldig i 4 dager"). Prices that
   differ between emails may be intentional. Flag only genuine contradictions and ask.
-- **Number of women helped is "12.000+"** in body copy (the footer bio keeps Sadie's "12 000").
+- **Number of women helped is 12.000+** in body copy: write "12.000+ kvinner", or just "mer enn 12.000" / "over 12.000"
+  when a "more than" is already there (never both). The footer bio keeps Sadie's "12 000".
 
 ## Building
 

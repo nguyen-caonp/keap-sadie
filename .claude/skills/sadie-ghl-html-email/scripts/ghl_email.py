@@ -22,6 +22,8 @@ TEMPLATE = os.path.join(HERE, '..', 'assets', 'ghl-email-template.html')
 
 PURPLE, MAGENTA = '#5C3884', '#963885'
 LINK = 'color:%s; text-decoration:underline;' % MAGENTA
+# Use this as an href when the real link is unknown. Never guess a live URL: a wrong link goes to real subscribers.
+TODO_URL = 'https://TODO-ADD-LINK'
 DEFAULT_FOOTER_REASON = 'Du får denne e-posten fordi du meldte deg på hos Hypopressiv trening Norge.'
 
 # Placeholders found in text drafts -> GHL merge fields. Anything not listed here must be asked about,
@@ -91,8 +93,9 @@ def box(md):
     return hl('<p class="bp" style="text-align:left;">%s</p>\n' % inline(clean(md)))
 
 
-def cta(label_md, url):
-    """Pill button inside a highlight box. Label is plain text (emoji ok)."""
+def cta(label_md, url=None):
+    """Pill button inside a highlight box. Label is plain text (emoji ok). url=None -> TODO_URL placeholder."""
+    url = url or TODO_URL
     label = re.sub(r'</?strong>', '', inline(label_md, strip_links=True))
     return hl('<p class="cta"><a class="btn" href="%s">%s</a></p>\n' % (url, label))
 

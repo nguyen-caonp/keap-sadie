@@ -49,7 +49,9 @@ def check(path, source=None):
         res.append(('FAIL', 'leftover markdown/backslash escapes in body'))
     if re.search(r'FIRSTNAME|\(COUNTDOWN\)', body_nc):
         res.append(('FAIL', 'unconverted placeholder in body (FIRSTNAME / (COUNTDOWN))'))
-    if 'TODO' in doc:
+    if 'TODO-ADD-LINK' in doc:
+        res.append(('WARN', 'a link is still the TODO-ADD-LINK placeholder: ask the user for the real URL'))
+    elif 'TODO' in doc:
         res.append(('WARN', 'TODO marker left in file'))
 
     imgs = re.findall(r'<img [^>]*src="([^"]+)"', body_nc)
