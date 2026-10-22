@@ -123,6 +123,18 @@ def callout(lines):
     return hl(out)
 
 
+def marker_rows(items):
+    """Highlight box of marker rows (👉🏼 points etc.). `items`: list of (marker, md). marker=None gives a continuation
+    paragraph indented to line up with the row text above it (for a sentence that belongs to the previous point)."""
+    out = ''
+    for marker, md in items:
+        if marker:
+            out += _row(marker, inline(clean(md)))
+        else:
+            out += '<p class="bp" style="text-align:left;padding-left:30px;">%s</p>\n' % inline(clean(md))
+    return hl(out)
+
+
 def features(blocks):
     """Feature list in one box. Each block = title line (emoji optional) + description lines."""
     out = ''
