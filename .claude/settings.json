@@ -3,6 +3,7 @@
     "allow": [
       "mcp__Go_high_level__search_operations",
       "mcp__Go_high_level__describe_operation"
+      "mcp__Go_high_level__execute_operation"
     ]
   }
 }
